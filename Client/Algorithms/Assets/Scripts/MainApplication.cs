@@ -5,6 +5,7 @@ public class MainApplication : MonoBehaviour {
 
 	[SerializeField]
 	private AlgorithmType algorithmType;
+	private AlgorithmController algorithmController;
 
 	// Use this for initialization
 	void Start () {
@@ -17,6 +18,7 @@ public class MainApplication : MonoBehaviour {
 	}
 
 	private void StartApplication(){
-
+		algorithmController = new AlgorithmController (algorithmType);
+		algorithmController.StartController ();
 	}
 }
