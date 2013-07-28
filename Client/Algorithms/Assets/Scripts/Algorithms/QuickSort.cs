@@ -2,10 +2,10 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class MinMax : Complex, IAlgorithm {
+public class QuickSort : Complex, IAlgorithm {
 
 	public override void Show(){
-		
+
 	}
 
 	public override void Hide(){
@@ -25,7 +25,7 @@ public class MinMax : Complex, IAlgorithm {
 	}
 
 	private void StartAlgorithm(){
-		Debug.Log ("Hello Min Max");
+		Debug.Log ("Hello QuickSort");
 	}
-	
+
 }

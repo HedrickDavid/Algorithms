@@ -9,9 +9,7 @@ public enum AlgorithmType {
 	CountingSort,
 	RadixSort,
 	BucketSort,
-	SortingNetworks,
-	BitonicSortingOrder,
-	MergingNetworks,
-	AmortizedAnalysis,
-	StoogeSort
+	StoogeSort,
+	BitonicSorting,
+	AmortizedAnalysis
 }
