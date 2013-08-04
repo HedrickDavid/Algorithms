@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System;
+using System.Collections.Generic;
 
 public class MainApplication : MonoBehaviour {
 
@@ -39,8 +40,12 @@ public class MainApplication : MonoBehaviour {
 		//min.Execute ();
 
 		if (parentContainer != null){
-			MinMax minmax = parentContainer.AddComponent<MinMax>();
-			minmax.Execute ();
+			//MinMax minmax = parentContainer.AddComponent<MinMax>();
+			//minmax.Execute ();
+
+			LCS lcs = parentContainer.AddComponent<LCS> ();
+			lcs.SetValueList(new List<int>(){11, 17, 5, 8, 6, 4, 7, 12, 3});
+			lcs.Execute ();
 		}
 	}
 
