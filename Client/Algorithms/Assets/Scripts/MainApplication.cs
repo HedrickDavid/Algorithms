@@ -44,7 +44,8 @@ public class MainApplication : MonoBehaviour {
 			//minmax.Execute ();
 
 			LCS lcs = parentContainer.AddComponent<LCS> ();
-			lcs.SetValueList(new List<int>(){11, 17, 5, 8, 6, 4, 7, 12, 3});
+			//lcs.SetValueList(new List<int>(){11, 17, 5, 8, 6, 4, 7, 12, 3});
+			lcs.SetValueList(new List<int>(){20, 4, 5, 44, 3, 10, 1, 12, 23});
 			lcs.Execute ();
 		}
 	}

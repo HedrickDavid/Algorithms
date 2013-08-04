@@ -44,8 +44,7 @@ public class LCS : Complex, IAlgorithm {
 	}
 
 	private void InitializeLCS(){
-		Debug.Log (_lcsList.Count);
-		Debug.Log (_valueList.Count);
+		// Initialize memoization of the last 2 elements in the list
 		if (_lcsList.Count == 0 && _valueList.Count >= 2) {
 			int last = _valueList.Count - 1;
 			int secLast = _valueList.Count - 2;
@@ -64,30 +63,24 @@ public class LCS : Complex, IAlgorithm {
 
 		// Determine if the element is the leaf node
 		if (start == end){
-			Debug.Log ("Leaf: " + start + " - " + end);
+			//Debug.Log ("Leaf: " + start + " - " + end);
 			return lcsCount; 
 		}
 
 		int mid = (int)Mathf.Floor((start + end) / 2);
-		Debug.Log ("Node: " + start + " - " + end + " - " + mid);
-		// Execute right side first to start memoization
-		int right = ExecuteLCS (valueList, mid + 1, end, lcsCount);
 
-		// Add to list if the value of the start index of the value list is less than that of the first 
+		lcsCount = ExecuteLCS (valueList, mid + 1, end, lcsCount);
+
+		// Add to list if the value of the end index of the value list is less than that of the first 
 		// index of the longest common subsequence and increment count
-	
-		if (valueList [start] < _lcsList [0]) {		
-			_lcsList.Insert (0, _valueList [start]);
-			right++;
+		if (valueList [end] < _lcsList [0] && end != _valueList.Count - 1) {		
+			_lcsList.Insert (0, _valueList [end]);
+			lcsCount++;
 		}
 
 		// Left side of the recursion
-		int left = ExecuteLCS (valueList, start, mid, lcsCount);
-		Debug.Log("right: " + right);
-		Debug.Log("left: " + left);
-		if (right > left){
-			return right;
-		}
+		lcsCount = ExecuteLCS (valueList, start, mid, lcsCount);
+
 		return lcsCount;
 	}
 }
