@@ -32,7 +32,7 @@ public class LCS : Complex, IAlgorithm {
 		_lcsList = new List<int> ();
 
 		// Initialize first value of list
-		InitializeLCS ();
+		//InitializeLCS ();
 		Debug.Log (_lcsList[_lcsList.Count-1]);
 		int lcs = ExecuteLCS (_valueList, 0, _valueList.Count - 1, 1);
 		Debug.Log ("Longest Common Subsequence: " + lcs);
@@ -41,6 +41,28 @@ public class LCS : Complex, IAlgorithm {
 			str += val + ", ";
 		}
 		Debug.Log (str);
+	}
+
+	private int StartLCS(){
+		int lcsCount = 0;
+		int len = _valueList.Count;
+		if (len == 1){
+			_lcsList.Add (1);
+			lcsCount++;
+			return;
+		} else if (len == 0){
+			return;
+		}
+
+		for (int i=len - 2; i>=0; i--){
+			(_valueList, i+1, len, i);
+		}
+		return lcsCount;
+	}
+
+	private int FindLCS(List<int> valueList, int start, int end, int index){
+		FindLCS ();
+
 	}
 
 	private void InitializeLCS(){
