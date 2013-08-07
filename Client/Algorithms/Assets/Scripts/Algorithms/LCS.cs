@@ -34,35 +34,54 @@ public class LCS : Complex, IAlgorithm {
 		// Initialize first value of list
 		//InitializeLCS ();
 		Debug.Log (_lcsList[_lcsList.Count-1]);
-		int lcs = ExecuteLCS (_valueList, 0, _valueList.Count - 1, 1);
+		//int lcs = ExecuteLCS (_valueList, 0, _valueList.Count - 1, 1);
+		int lcs = StartLCS ();
 		Debug.Log ("Longest Common Subsequence: " + lcs);
-		string str = "";
+		/*string str = "";
 		foreach (int val in _lcsList){
 			str += val + ", ";
-		}
-		Debug.Log (str);
+		}*/
+
+		//Debug.Log (str);
 	}
 
 	private int StartLCS(){
-		int lcsCount = 0;
+		int largest = 0;
 		int len = _valueList.Count;
 		if (len == 1){
 			_lcsList.Add (1);
-			lcsCount++;
-			return;
+			largest++;
+			return largest;
 		} else if (len == 0){
-			return;
+			return largest;
 		}
 
 		for (int i=len - 2; i>=0; i--){
-			(_valueList, i+1, len, i);
+			int lcsCount = FindLCS(_valueList , i+1, len, i);
+			_lcsList.Add (lcsCount);
+			if (largest < lcsCount ){
+				largest = lcsCount;
+			}
 		}
-		return lcsCount;
+		return largest;
 	}
 
 	private int FindLCS(List<int> valueList, int start, int end, int index){
-		FindLCS ();
 
+		// return if leaft node
+		if (start <= end){
+			return 1;
+		}
+
+		int mid = (int)Mathf.Floor((start + end) / 2);
+		int left = FindLCS (valueList, start, mid, index);
+		int right = FindLCS (valueList, mid + 1, end, index);
+
+		if (left > right) {
+			return left;
+		} else {
+			return right;
+		}
 	}
 
 	private void InitializeLCS(){
