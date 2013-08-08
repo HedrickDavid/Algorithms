@@ -38,7 +38,7 @@ public class MainApplication : MonoBehaviour {
 		//Debug.Log(Type.GetType(algorithmType.ToString()));
 		//MinMax min = AggregateShifter.Shift<MinMax>();
 		//min.Execute ();
-
+		Debug.Log ("Algorithm Displayed");
 		if (parentContainer != null){
 			//MinMax minmax = parentContainer.AddComponent<MinMax>();
 			//minmax.Execute ();
