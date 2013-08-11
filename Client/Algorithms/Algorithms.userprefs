@@ -1,11 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../../spellchain/client/Assets/Framework/Scripts/Settings/Config.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Algorithms\LIS.cs">
     <Files>
-      <File FileName="../../../spellchain/client/Assets/Prototypes/SpellChain/Scripts/WebServices/Metrics.cs" Line="21" Column="21" />
-      <File FileName="../../../spellchain/client/Assets/Framework/Scripts/Game/State.cs" Line="93" Column="48" />
-      <File FileName="../../../spellchain/client/Assets/Resources/config.txt" Line="17" Column="22" />
-      <File FileName="../../../spellchain/client/Assets/Framework/Scripts/Settings/Config.cs" Line="97" Column="45" />
+      <File FileName="Assets\Scripts\Algorithms\LCS.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Algorithms\LIS.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

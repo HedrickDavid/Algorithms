@@ -69,9 +69,10 @@ public class LCS : Complex, IAlgorithm {
 
 	private int FindLCS(List<int> valueList, int start, int end, int lcsCount, int index){
 		// return if leaft node
-		if (start == end && _valueList[index] > _valueList[start]){
+		if (start == end){
 			return _lcsList[start];
 		}
+
 		int mid = (int)Mathf.Floor((start + end) / 2);
 		Debug.Log(mid);
 		int left = FindLCS (valueList, start, mid, lcsCount, index);
