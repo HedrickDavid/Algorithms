@@ -79,12 +79,11 @@ public class LIS : Complex, IAlgorithm {
 				Debug.Log (lisVal + ", ");
 			}
 			int value = _valueList [i];
-			if (value < _lisList [0]) {
-				_lisList [0] = value;
-			} else if (value > _lisList [_lisList.Count - 1]) {
-				_lisList.Add (value);
+
+			if (value > _lisList [_lisList.Count - 1]) {
+				_lisList.Add (i);
 			} else {
-				int index = BinarySearch (_lisList, 0, _lisList.Count-1, value);
+				int index = BinarySearch (_lisList, 0, _lisList.Count-1, i);
 				// should not have a result of -1
 				Debug.Log (index);
 				if (index <= -1){
