@@ -43,11 +43,14 @@ public class MainApplication : MonoBehaviour {
 			//MinMax minmax = parentContainer.AddComponent<MinMax>();
 			//minmax.Execute ();
 
-			LIS lcs = parentContainer.AddComponent<LIS> ();
+			//LIS lcs = parentContainer.AddComponent<LIS> ();
 			//lcs.SetValueList(new List<int>(){11, 17, 5, 8, 6, 4, 7, 12, 3});
 			//lcs.SetValueList(new List<int>{20, 4, 5, 44, 3, 10, 1, 12, 23});
-			lcs.SetValueList(new List<int>{50, 100, 60, 101, 70, 102, 10, 103, 11, 104, 12, 105, 13, 106, 4, 3, 5, 6, 7, 1, 14, 15, 16, 17, 18});
-			lcs.Execute ();
+			//lcs.SetValueList(new List<int>{50, 100, 60, 101, 70, 102, 10, 103, 11, 104, 12, 105, 13, 106, 4, 3, 5, 6, 7, 1, 14, 15, 16, 17, 18});
+			//lcs.Execute ();
+
+			CoinChange cc = parentContainer.AddComponent<CoinChange>();
+			cc.SetValueList (new List<int>(){2,5,3,6}, 10);
 		}
 	}
 
